@@ -19,8 +19,6 @@ static int __init foo_init(void)
 
 static void __exit foo_exit(void)
 {
-	printk("%s(): %d\n", __func__, __LINE__);
-}
 
 module_init(foo_init);
 module_exit(foo_exit);
