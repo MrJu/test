@@ -3,13 +3,12 @@
 # Makefile for the kernel character device drivers.
 #
 
-KERNEL := /lib/modules/$(shell uname -r)/build
-PWD := $(shell pwd)
+KERN_DIR := /lib/modules/$(shell uname -r)/build
 
 obj-m := foo.o
 
 all:
-	$(MAKE) -C $(KERNEL) M=$(PWD) modules
+	$(MAKE) -C $(KERN_DIR) M=`pwd` modules
 
 clean:
-	-rm -f *.o *.ko *.mod.c Module.symvers modules.order
+	$(MAKE) -C $(KERN_DIR) M=`pwd` modules clean
