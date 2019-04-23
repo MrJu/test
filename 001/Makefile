@@ -1,5 +1,7 @@
-# Author: andrew, mrju.email@gmail.com
-# Description: Makefile for building kernel module
+# SPDX-License-Identifier: GPL-2.0
+#
+# Makefile for the kernel character device drivers.
+#
 
 KERNEL := /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
